@@ -22,6 +22,7 @@ twitImgEmit.on('buf', function(buf) {
 function stopListening() {
     if(i > 100) {
         twitImgEmit.removeAllListeners('buf');
+        console.log('100 images saved.');
     }
 }
 
