@@ -3,6 +3,7 @@ var EventEmitter = require('events').EventEmitter;
 var util = require('util');
 var fs = require('fs');
 var _ = require('lodash');
+var http = require('http');
 
 var TwitImgEmit = function(options) {
     // pass in keywords / geo coords object to filter
@@ -46,10 +47,49 @@ TwitImgEmit.prototype.setupTwitStream = function(config, opts) {
 
     twit.stream('filter', filter, function(stream) {
         stream.on('data', function(data) {
-            console.log(data);
+            var parsedData;
+
+            // In case we fall behind
+            if('warning' in data) { console.log('falling behind'); return; }
+
+            try {
+                parsedData = JSON.parse(JSON.stringify(data));
+            } catch(e) {
+                console.log(e);
+            }
+
+            if('entities' in parsedData) {
+                if('media' in parsedData.entities) {
+                    for (var i = 0; i < parsedData.entities.media.length; i++) {
+
+                        var media_url = parsedData.entities.media[i].media_url;
+                        // var media_file_name = path.basename(media_url);
+
+                        self.getImage(media_url);
+                    }
+                }
+            }
         });
     });
 
+};
+
+TwitImgEmit.prototype.getImage = function(imgURL) {
+    // We've got a URL so just get the image
+    var self = this;
+    http.get(imgURL, function(res) {
+
+        var bufs = [];
+
+        res.on('data', function(data) {
+            bufs.push(data);
+        });
+
+        res.on('end', function(data) {
+            var buf = Buffer.concat(bufs);
+            self.emit('buf', buf);
+        });
+    });
 };
 
 module.exports = TwitImgEmit;
