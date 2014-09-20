@@ -32,8 +32,8 @@ images.on('data', function(imgData) {
 "A comma-separated list of phrases which will be used to determine what Tweets will be delivered on the stream. A phrase may be one or more terms separated by spaces, and a phrase will match if all of the terms in the phrase are present in the Tweet, regardless of order and ignoring case."
 
 #### filter_level
-none, low, mediuem
-Set to medium to filter out most of the porn.
+none, low, medium
+This is set to medium by default to filter out most of the porn. **Most** of it, so use cautiously.
 
 #### locations
 A comma-separated list of longitude,latitude pairs specifying a set of bounding boxes to filter Tweets by
