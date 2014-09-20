@@ -1,6 +1,14 @@
 {
-    "consumer_key": "consumer_key",
-    "consumer_secret": "consumer_secret",
-    "access_token_key": "access_token_key",
-    "access_token_secret": "access_token_secret"
+    "key" : {
+        "consumer_key": "consumer_key",
+        "consumer_secret": "consumer_secret",
+        "access_token_key": "access_token_key",
+        "access_token_secret": "access_token_secret"
+    },
+    "filter" : {
+        "stall_warnings" : true,
+        "filter_level" : "medium",
+        "track" : "",
+        "locations" : "-180,-90,180,90"
+    }
 }

@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/mattholl/twit-img-emit/issues"
   },
-  "homepage": "https://github.com/mattholl/twit-img-emit"
+  "homepage": "https://github.com/mattholl/twit-img-emit",
+  "dependencies": {
+    "twitter": "~0.2.12",
+    "lodash": "~2.4.1"
+  }
 }
