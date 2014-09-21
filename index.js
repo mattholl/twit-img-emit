@@ -6,7 +6,7 @@ var _ = require('lodash');
 var http = require('http');
 
 var TwitImgEmit = function(options) {
-    // pass in keywords / geo coords object to filter
+
     var opts = options || {};
     var config;
 
@@ -30,6 +30,7 @@ util.inherits(TwitImgEmit, EventEmitter);
 
 TwitImgEmit.prototype.setupTwitStream = function(config, opts) {
 
+    // pass in keywords / geo coords object to filter
     var twit = new twitter({
         consumer_key: config.key.consumer_key,
         consumer_secret: config.key.consumer_secret,

@@ -1,7 +1,7 @@
 {
   "name": "twit-img-emit",
   "version": "0.0.0",
-  "description": "Get images from the Twitter streaming api and emit the buffers as data events.",
+  "description": "A small module to get images from the Twitter streaming API and emit the buffers as data events.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

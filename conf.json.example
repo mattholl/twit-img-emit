@@ -8,7 +8,7 @@
     "filter" : {
         "stall_warnings" : true,
         "filter_level" : "medium",
-        "track" : "",
+        "track" : null,
         "locations" : "-180,-90,180,90"
     }
 }
