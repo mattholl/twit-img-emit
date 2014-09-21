@@ -18,7 +18,7 @@ twImg.on('data', function(imgData) {
 ### Set up
 
 1. Generate Twitter API keys
-2. Copy conf.json.example to conf.json and add API keys. 
+2. Copy conf.json.example to conf.json and add API keys.
 3. Optionally add keywords or location coordinates to filter the sream
 4. Attach listeners for the incoming images
 
@@ -40,3 +40,7 @@ For example:
 At least a track or location parameter must be specified in order to use the filter parameter.
 
 [1]:https://dev.twitter.com/streaming/overview/request-parameters
+
+## Release History
+
+* 0.1.0 Initial release

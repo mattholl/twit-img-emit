@@ -1,6 +1,6 @@
 {
   "name": "twit-img-emit",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A small module to get images from the Twitter streaming API and emit the buffers as data events.",
   "main": "index.js",
   "scripts": {
